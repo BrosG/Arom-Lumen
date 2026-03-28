@@ -1070,12 +1070,14 @@ section:not(.hero) {
 
 /* Image reveal animation on scroll */
 .g-item.reveal {
-    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .g-item.reveal.visible {
-    clip-path: inset(0 0 0 0);
-    transition: clip-path 0.9s var(--ease-lux), opacity 0.8s var(--ease-lux), transform 0.8s var(--ease-lux);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s var(--ease-lux), transform 0.8s var(--ease-lux);
 }
 
 /* Gallery hover: image scale + overlay slide up */

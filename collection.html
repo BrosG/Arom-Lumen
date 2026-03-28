@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Collection — AROM LUMEN | Handcrafted Sculptural Lamps</title>
+    <meta name="description" content="Browse the complete collection of unique handcrafted sculptural lamps by Arom Lumen. Filter by wood type, sort by price or height. Every piece is one of a kind.">
+    <link rel="canonical" href="https://aromlumen.com/collection.html">
+    <link rel="icon" href="images/profile.jpg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Collection — AROM LUMEN | Handcrafted Sculptural Lamps">
+    <meta property="og:description" content="Browse unique handcrafted sculptural lamps by Arom Lumen. Each piece is a one-of-a-kind creation from rare woods.">
+    <meta property="og:image" content="https://aromlumen.com/images/05.jpg">
+    <meta property="og:url" content="https://aromlumen.com/collection.html">
+    <meta property="og:site_name" content="Arom Lumen">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Collection — AROM LUMEN">
+    <meta name="twitter:description" content="Browse unique handcrafted sculptural lamps by Arom Lumen.">
+    <meta name="twitter:image" content="https://aromlumen.com/images/05.jpg">
+
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&family=Noto+Sans+Thai:wght@200;300;400;500&family=Noto+Sans+SC:wght@200;300;400;500&family=Noto+Sans+Arabic:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Structured Data: ItemList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Arom Lumen Collection",
+        "description": "Complete collection of unique handcrafted sculptural lamps by Arom Lumen.",
+        "url": "https://aromlumen.com/collection.html",
+        "isPartOf": { "@id": "https://aromlumen.com/#website" }
+    }
+    </script>
+</head>
+<body>
+
+<!-- Skip to content -->
+<a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
+<!-- Loader -->
+<div class="loader" id="loader" role="status" aria-label="Loading page">
+    <div class="loader-logo">Arom Lumen</div>
+    <div class="loader-bar"></div>
+</div>
+
+<!-- Cursor Glow -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<header>
+    <nav id="navbar" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="Arom Lumen — Home">Arom Lumen</a>
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="collection.html" class="active" data-i18n="nav_collection" aria-current="page">Collection</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="lang-switch" id="langSwitch" role="group" aria-label="Language switcher">
+                <button class="lang-btn" data-lang="fr" aria-label="Fran&#231;ais">FR</button>
+                <button class="lang-btn active" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
+                <button class="lang-btn" data-lang="th" aria-label="&#xE44;&#xE17;&#xE22;">&#xE44;&#xE17;&#xE22;</button>
+                <button class="lang-btn" data-lang="zh" aria-label="&#x4E2D;&#x6587;">&#x4E2D;&#x6587;</button>
+                <button class="lang-btn" data-lang="ru" aria-label="&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;">RU</button>
+                <button class="lang-btn" data-lang="ar" aria-label="&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;">&#x0639;</button>
+            </div>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+</header>
+
+<main id="main-content">
+    <!-- COLLECTION HEADER -->
+    <section class="creations" style="padding-top:12rem" aria-labelledby="collection-heading">
+        <div style="text-align:center;max-width:700px;margin:0 auto 2rem">
+            <p class="s-label" data-i18n="collection_label">The Collection</p>
+            <h1 class="s-title" id="collection-heading" data-i18n="collection_title">All Creations</h1>
+            <div class="s-div" style="margin:0 auto 2rem" aria-hidden="true"></div>
+            <p style="font-size:.85rem;font-weight:300;color:var(--cream-m)" data-i18n="collection_note">Every piece is sold — each one unique. Commission a similar creation.</p>
+        </div>
+
+        <!-- FILTER & SORT BAR -->
+        <div class="filter-bar" id="filterBar" role="toolbar" aria-label="Filter products by wood type">
+            <span class="filter-label" data-i18n="filter_label" id="filter-label">Filter by Wood</span>
+            <button class="filter-tag active" data-wood="all" data-i18n="filter_all" aria-pressed="true">All</button>
+        </div>
+        <div class="filter-bar" id="sortBar" style="border-bottom:none;padding-top:0" role="toolbar" aria-label="Sort products">
+            <span class="filter-label" data-i18n="sort_label" id="sort-label">Sort</span>
+            <button class="filter-tag active" data-sort="default" aria-pressed="true">Default</button>
+            <button class="filter-tag" data-sort="price-asc" data-i18n="sort_price_asc" aria-pressed="false">Price: Low to High</button>
+            <button class="filter-tag" data-sort="price-desc" data-i18n="sort_price_desc" aria-pressed="false">Price: High to Low</button>
+            <button class="filter-tag" data-sort="height-asc" data-i18n="sort_height_asc" aria-pressed="false">Height: Short to Tall</button>
+            <button class="filter-tag" data-sort="height-desc" data-i18n="sort_height_desc" aria-pressed="false">Height: Tall to Short</button>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="gallery-grid" id="collectionGrid" style="grid-template-columns:repeat(3,1fr)" role="list" aria-label="Product collection" aria-live="polite"></div>
+    </section>
+
+    <!-- HOTEL CTA -->
+    <section class="hotel-cta" aria-labelledby="hotel-cta-heading">
+        <div class="inner reveal">
+            <p class="s-label" data-i18n="htl_label">For Hotels & Hospitality</p>
+            <h2 class="s-title" id="hotel-cta-heading" data-i18n="htl_title">Transform Your Spaces</h2>
+            <div class="s-div" style="margin:0 auto 2rem" aria-hidden="true"></div>
+            <p data-i18n="htl_desc">From grand lobby installations to intimate suite lighting, Arom Lumen collaborates with architects and hoteliers worldwide to create bespoke collections.</p>
+            <div style="display:flex;gap:1.5rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap">
+                <a href="https://ig.me/m/arom_lumen" target="_blank" rel="noopener noreferrer" class="btn-p" data-i18n="htl_cta1">Message Us on Instagram</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    <div class="footer-content">
+        <div class="footer-logo">Arom Lumen</div>
+        <p class="footer-text">&copy; 2026 Arom Lumen — Romain Davidico. <span data-i18n="footer">All creations are one of a kind.</span></p>
+        <a href="https://ig.me/m/arom_lumen" target="_blank" rel="noopener noreferrer" class="btn-o" style="padding:.6rem 1.5rem;font-size:.5rem" aria-label="Contact us via Instagram Direct Message">Instagram DM</a>
+    </div>
+</footer>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+let currentFilter = 'all';
+let currentSort = 'default';
+
+function renderCollection() {
+    const grid = document.getElementById('collectionGrid');
+    if (!grid || typeof PRODUCTS === 'undefined') return;
+
+    // Collect all unique woods for filter buttons
+    buildFilterButtons();
+
+    let filtered = [...PRODUCTS];
+
+    // Filter
+    if (currentFilter !== 'all') {
+        filtered = filtered.filter(p => p.woods.some(w => w.toLowerCase() === currentFilter.toLowerCase()));
+    }
+
+    // Sort
+    switch (currentSort) {
+        case 'price-asc': filtered.sort((a, b) => a.priceNum - b.priceNum); break;
+        case 'price-desc': filtered.sort((a, b) => b.priceNum - a.priceNum); break;
+        case 'height-asc': filtered.sort((a, b) => a.heightNum - b.heightNum); break;
+        case 'height-desc': filtered.sort((a, b) => b.heightNum - a.heightNum); break;
+    }
+
+    grid.innerHTML = filtered.map(p => {
+        const desc = getProductDesc(p);
+        return '<a href="piece.html?id=' + p.id + '" class="g-item reveal" role="listitem" aria-label="' + p.name + ' — ' + p.price + '">' +
+            '<img src="' + p.images[0] + '" alt="' + p.name + ' — handcrafted sculptural lamp" loading="lazy" width="600" height="800">' +
+            '<div class="g-overlay">' +
+            '<h3>' + p.name + '</h3>' +
+            '<span>' + p.height + '</span>' +
+            '<div class="price">' + p.price + '</div>' +
+            '<div class="sold">Sold Out</div>' +
+            '</div></a>';
+    }).join('');
+
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:4rem;color:var(--txt-m);font-size:.85rem" role="status">No pieces found for this filter.</div>';
+    }
+
+    // Re-observe reveals
+    const obs = new IntersectionObserver(e => e.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } }), { threshold: 0.12 });
+    grid.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+}
+
+let filtersBuilt = false;
+function buildFilterButtons() {
+    if (filtersBuilt) return;
+    filtersBuilt = true;
+    const bar = document.getElementById('filterBar');
+    const allWoods = new Set();
+    PRODUCTS.forEach(p => p.woods.forEach(w => allWoods.add(w)));
+    [...allWoods].sort().forEach(wood => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-tag';
+        btn.dataset.wood = wood;
+        btn.setAttribute('aria-pressed', 'false');
+        btn.textContent = wood.charAt(0).toUpperCase() + wood.slice(1);
+        bar.appendChild(btn);
+    });
+    // Re-bind filter clicks
+    bar.querySelectorAll('.filter-tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+            bar.querySelectorAll('.filter-tag').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-pressed', 'true');
+            currentFilter = btn.dataset.wood;
+            renderCollection();
+        });
+    });
+}
+
+// Sort buttons
+document.getElementById('sortBar').querySelectorAll('.filter-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('sortBar').querySelectorAll('.filter-tag').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        currentSort = btn.dataset.sort;
+        renderCollection();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', renderCollection);
+</script>
+</body>
+</html>

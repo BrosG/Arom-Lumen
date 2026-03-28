@@ -162,6 +162,12 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Selection — gold highlight */
 ::selection {
     background: var(--gold);

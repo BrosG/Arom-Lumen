@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════
+   9. HERO — DARK, MOODY, ATMOSPHERIC
+   ═══════════════════════════════════════════ */
+.hero {
+    position: relative;
+    height: 85vh;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 100svh;
+        min-height: 700px;
+    }
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(5, 4, 3, 0.6) 0%,
+            rgba(5, 4, 3, 0.3) 40%,
+            rgba(5, 4, 3, 0.7) 75%,
+            rgba(5, 4, 3, 1) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80') center / cover no-repeat;
+    transform: scale(1.1);
+    will-change: transform;
+    animation: heroZ 25s ease-in-out infinite alternate;
+}
+
+@keyframes heroZ {
+    0%   { transform: scale(1.1); }
+    100% { transform: scale(1.02); }
+}
+
+/* Scroll-driven parallax on hero background (where supported) */
+@supports (animation-timeline: scroll()) {
+    .hero-bg {
+        animation: heroParallax linear forwards;
+        animation-timeline: scroll(nearest block);
+        animation-range: entry 0% exit 100%;
+    }
+
+    @keyframes heroParallax {
+        from { transform: scale(1.1) translateY(0); }
+        to   { transform: scale(1.1) translateY(15%); }
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 var(--space-section-x);
+}
+
+.hero-ornament {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto var(--space-md);
+    position: relative;
+}
+
+.hero-ornament::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    border: 1px solid var(--gold);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.hero-sub {
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 1s 0.3s forwards;
+}
+
+.hero-title {
+    font-family: var(--serif);
+    font-size: var(--fs-hero);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--cream);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 1s 0.6s forwards;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--gold-l);
+}
+
+.hero-desc {
+    font-size: var(--fs-base);
+    font-weight: 300;
+    color: var(--txt-m);
+    max-width: 560px;
+    margin: 0 auto var(--space-md);
+    opacity: 0;
+    animation: fadeUp 1s 0.9s forwards;
+    line-height: 1.8;
+}
+
+/* Hero CTA — gold border → gold fill on hover = reward */
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--gold-d);
+    padding: 1.1rem 2.5rem;
+    width: 100%;
+    min-height: var(--touch-min);
+    transition: all var(--duration-med) var(--ease-lux);
+    opacity: 0;
+    animation: fadeUp 1s 1.2s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 480px) {
+    .hero-cta {
+        padding: 1.1rem 3.5rem;
+        width: auto;
+    }
+}
+
+/* Gold shimmer sweep on hover */
+.hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 0%, rgba(232, 192, 104, 0.15) 45%, rgba(232, 192, 104, 0.3) 50%, rgba(232, 192, 104, 0.15) 55%, transparent 100%);
+    transform: translateX(-120%);
+    transition: transform 0.6s var(--ease-lux);
+}
+
+.hero-cta:hover {
+    background: var(--gold);
+    color: var(--bg);
+    border-color: var(--gold);
+    box-shadow: 0 0 40px var(--gold-g), 0 0 80px rgba(212, 168, 83, 0.08);
+    transform: translateY(-2px);
+}
+
+.hero-cta:hover::before {
+    transform: translateX(120%);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: clamp(1.5rem, 3vw, 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--txt-m);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s 1.5s forwards;
+    z-index: 10;
+}
+
+.hero-scroll .line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold-d), transparent);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50%      { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}

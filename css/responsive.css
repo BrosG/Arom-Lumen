@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════
+   28. SCROLL REVEAL — progressive disclosure
+   ═══════════════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--ease-lux);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll-driven reveals for browsers that support it */
+@supports (animation-timeline: view()) {
+    .reveal {
+        animation: scrollReveal linear forwards;
+        animation-timeline: view();
+        animation-range: entry 10% entry 40%;
+    }
+
+    @keyframes scrollReveal {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Override JS-driven reveal when CSS scroll animation is available */
+    .reveal.visible {
+        opacity: unset;
+        transform: unset;
+    }
+}
+
+
+/* ═══════════════════════════════════════════
+   29. IMAGE LAZY LOADING / BLUR-UP
+   ═══════════════════════════════════════════ */
+.lazy-image {
+    position: relative;
+    overflow: hidden;
+    background: var(--sf);
+}
+
+.lazy-image img {
+    transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-image img.lazy {
+    filter: blur(20px);
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+.lazy-image img.lazy.loaded {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Shimmer placeholder */
+.lazy-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 168, 83, 0.03) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity var(--duration-med);
+}
+
+.lazy-image.loaded::before {
+    opacity: 0;
+}
+
+@keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+
+/* ═══════════════════════════════════════════
+   30. UNIVERSAL HOVER ZOOM
+   ═══════════════════════════════════════════ */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform var(--duration-slow) var(--ease-lux);
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.06);
+}
+
+.story-portrait img,
+.ig-item img,
+.f-image img {
+    transition: transform var(--duration-slow) var(--ease-lux), filter 0.6s;
+}
+
+
+/* ═══════════════════════════════════════════
+   31. REDUCED MOTION
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero-bg {
+        animation: none !important;
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .g-item.reveal {
+        clip-path: none;
+    }
+
+    /* Disable view transitions */
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none !important;
+    }
+}
+
+
+/* ═══════════════════════════════════════════
+   32. HIGH-CONTRAST OVERRIDES
+   ═══════════════════════════════════════════ */
+@media (forced-colors: active) {
+    .btn-p,
+    .btn-o,
+    .hero-cta,
+    .ig-dm-btn {
+        border: 2px solid currentColor;
+    }
+
+    .nav-links a::after {
+        background: currentColor;
+    }
+}
+
+
+/* ═══════════════════════════════════════════
+   33. ULTRA-WIDE (1920px+)
+   ═══════════════════════════════════════════ */
+@media (min-width: 1920px) {
+    body {
+        font-size: clamp(0.95rem, 0.8rem + 0.2vw, 1.1rem);
+    }
+
+    .story-grid,
+    .featured-grid {
+        max-width: 1400px;
+    }
+
+    .gallery-grid {
+        max-width: 1400px;
+        margin-inline: auto;
+    }
+
+    section {
+        padding-inline: clamp(4rem, 8vw, 12rem);
+    }
+}
+
+
+/* ═══════════════════════════════════════════
+   34. PRINT STYLES
+   ═══════════════════════════════════════════ */
+@media print {
+    .loader,
+    .cursor-glow,
+    nav,
+    .hero-scroll,
+    .lightbox,
+    .product-modal {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+        color: #111;
+    }
+
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .hero-bg {
+        display: none;
+    }
+}

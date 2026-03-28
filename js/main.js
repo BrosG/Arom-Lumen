@@ -759,6 +759,7 @@ function initPrefetch() {
     }
 
     document.addEventListener('pointerenter', function (e) {
+        if (!e.target || !e.target.closest) return;
         var a = e.target.closest('a[href]');
         if (a) prefetchUrl(a.getAttribute('href'));
     }, true);

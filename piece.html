@@ -102,7 +102,7 @@
 
 <main id="main-content">
     <!-- PRODUCT DETAIL (rendered by JS) -->
-    <article class="product-hero" id="productHero" style="padding-left:4rem;padding-right:4rem" aria-labelledby="pieceName">
+    <article class="product-hero" id="productHero" aria-labelledby="pieceName">
         <!-- Gallery side -->
         <figure class="product-gallery" id="productGallery" aria-label="Product image gallery">
             <div class="main-image" id="mainImage">
@@ -129,11 +129,11 @@
     </article>
 
     <!-- PREV / NEXT NAV -->
-    <nav style="padding:2rem 4rem 4rem;background:var(--bg2)" aria-label="Product navigation">
-        <div style="display:flex;justify-content:space-between;align-items:center;max-width:1300px;margin:0 auto;border-top:1px solid rgba(200,164,94,.06);padding-top:2rem">
-            <a href="#" id="prevPiece" class="btn-o" style="padding:.8rem 2rem" aria-label="Previous piece"><span data-i18n="piece_prev">Previous</span></a>
-            <a href="collection.html" class="btn-o" style="padding:.8rem 2rem" data-i18n="nav_collection">Collection</a>
-            <a href="#" id="nextPiece" class="btn-o" style="padding:.8rem 2rem" aria-label="Next piece"><span data-i18n="piece_next">Next</span></a>
+    <nav class="piece-nav" aria-label="Product navigation">
+        <div class="piece-nav-inner">
+            <a href="#" id="prevPiece" class="btn-o" aria-label="Previous piece"><span data-i18n="piece_prev">Previous</span></a>
+            <a href="collection.html" class="btn-o" data-i18n="nav_collection">Collection</a>
+            <a href="#" id="nextPiece" class="btn-o" aria-label="Next piece"><span data-i18n="piece_next">Next</span></a>
         </div>
     </nav>
 
@@ -143,7 +143,7 @@
             <p class="s-label" id="also-like-heading" data-i18n="piece_also_like">You May Also Like</p>
             <div class="s-div" style="margin:0 auto 2rem" aria-hidden="true"></div>
         </div>
-        <div class="gallery-grid" id="alsoLikeGrid" style="grid-template-columns:repeat(3,1fr)" role="list" aria-label="Related products"></div>
+        <div class="gallery-grid" id="alsoLikeGrid" role="list" aria-label="Related products"></div>
     </section>
 
     <!-- CTA -->
